@@ -1,74 +1,88 @@
 import React, { useState } from "react";
+import { FaUserTie } from "react-icons/fa";
 
+/* ─── Semua pertanyaan & jawaban ─── */
 const faqs = [
+  /* ── PERSONAL ── */
   {
     id: "faq1",
-    question: "Apakah saya perlu memiliki dasar coding sebelum bergabung?",
+    question: "Siapa Nadhim Alim?",
     answer:
-      "Tidak wajib! Program ini dirancang untuk pemula absolut hingga mereka yang ingin memperdalam keahlian. Kami akan membimbing Anda dari nol hingga siap membangun aplikasi web lengkap.",
+      "Saya mahasiswa Informatika yang aktif dalam Web Development, UI/UX, dan AI. Juga terlibat di HIPMI PT UAD sebagai Divisi Media & Digital.",
   },
   {
     id: "faq2",
-    question:
-      "Bagaimana bisa menjadi Fullstack Developer hanya dalam 3 bulan?",
+    question: "Apa motivasi utama terjun ke dunia teknologi?",
     answer:
-      "Kurikulum kami sangat intensif dan fokus pada teknologi yang paling relevan di industri. Dengan pendekatan berbasis proyek nyata dan mentor berpengalaman, Anda akan belajar dengan cepat dan efektif.",
+      "Teknologi mampu mengubah kehidupan sehari-hari. Saya ingin menciptakan solusi digital yang bermanfaat, khususnya di bidang edukasi dan efisiensi kerja.",
   },
   {
     id: "faq3",
-    question:
-      "Bagaimana bisa menjadi Fullstack Developer hanya dalam 3 bulan?",
+    question: "Apa minat utama dalam dunia IT?",
     answer:
-      "Kurikulum kami sangat intensif dan fokus pada teknologi yang paling relevan di industri. Dengan pendekatan berbasis proyek nyata dan mentor berpengalaman, Anda akan belajar dengan cepat dan efektif.",
+      "Frontend Development, UI/UX Design, AI, Web3, serta membangun proyek React & Tailwind CSS.",
   },
   {
     id: "faq4",
-    question: "Apakah ada jaminan pekerjaan setelah lulus?",
+    question: "Pengalaman organisasi atau komunitas?",
     answer:
-      "Kami tidak memberikan jaminan pekerjaan langsung, namun kami menyediakan dukungan karir seperti sesi persiapan wawancara, pembuatan portofolio, dan koneksi dengan industri untuk meningkatkan peluang Anda mendapatkan pekerjaan.",
+      "Aktif di HIPMI PT UAD, proyek freelance, dan komunitas open-source. Belajar manajemen tim serta komunikasi lintas-disiplin.",
   },
   {
     id: "faq5",
-    question: "Apa saja syarat untuk bergabung dengan program ini?",
+    question: "Mimpi besar ke depan?",
     answer:
-      "Syarat utamanya adalah komitmen tinggi untuk belajar, memiliki komputer dengan koneksi internet yang stabil, dan semangat untuk menjadi Fullstack Developer. Tidak ada batasan usia atau latar belakang pendidikan khusus.",
+      "Mendirikan startup teknologi berdampak dan menjadi mentor bagi pemula di bidang IT.",
   },
+
+  /* ── HRD / INTERVIEW ── */
   {
     id: "faq6",
-    question:
-      "Bisakah saya belajar secara fleksibel atau hanya di jam tertentu?",
+    question: "Apa kelebihan utama yang Anda miliki?",
     answer:
-      "Program kami menawarkan berbagai jadwal, termasuk kelas reguler dan fleksibel (online/offline) untuk menyesuaikan dengan kesibukan Anda. Anda bisa memilih opsi yang paling cocok.",
+      "Adaptif, komunikatif, serta nyaman bekerja dalam tim Agile. Penguasaan Frontend & UI/UX membantu saya menjembatani developer–designer.",
+  },
+  {
+    id: "faq7",
+    question: "Sebutkan satu kelemahan dan cara mengatasinya.",
+    answer:
+      "Cenderung terlalu detail-oriented. Saya atasi dengan menetapkan batas waktu review dan memprioritaskan tugas krusial terlebih dahulu.",
+  },
+  {
+    id: "faq8",
+    question: "Mengapa perusahaan harus merekrut Anda?",
+    answer:
+      "Saya membawa kombinasi skill teknis (React, Tailwind, Laravel) dan soft-skill (leadership, problem-solving). Siap memberi dampak cepat melalui pengalaman proyek nyata.",
+  },
+  {
+    id: "faq9",
+    question: "Berapa ekspektasi gaji Anda?",
+    answer:
+      "Gaji saya fleksibel—menyesuaikan range yang ditawarkan perusahaan dan tanggung jawab posisi. Saya terbuka untuk berdiskusi lebih lanjut.",
   },
 ];
 
 const FAQSection = () => {
   const [openFaq, setOpenFaq] = useState(null);
-
-  const toggleFaq = (id) => {
-    setOpenFaq(openFaq === id ? null : id);
-  };
+  const toggleFaq = (id) => setOpenFaq(openFaq === id ? null : id);
 
   return (
-    <section id="faq" className="py-8 bg-gray-50">
+    <section id="faq" className="py-12 bg-gray-50">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-xl font-bold text-center mb-6 text-gray-800">
-          Frequently Asked Questions
+        <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
+          Pertanyaan Seputar Saya <FaUserTie className="inline ml-1 text-blue-600" />
         </h2>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           {faqs.map((faq) => (
-            <div
-              key={faq.id}
-              className="border border-gray-200 rounded-sm overflow-hidden"
-            >
+            <div key={faq.id} className="border border-gray-200 rounded-md overflow-hidden">
               <button
-                className="flex items-center justify-between w-full p-3 text-left text-xs font-medium text-gray-700 hover:bg-gray-100 transition"
                 onClick={() => toggleFaq(faq.id)}
+                className="flex items-center justify-between w-full p-4 text-left text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
               >
-                <span className="pr-2">{faq.question}</span>
+                <span>{faq.question}</span>
                 <svg
-                  className={`w-3 h-3 transform transition-transform duration-150 ${
+                  className={`w-4 h-4 transform transition ${
                     openFaq === faq.id ? "rotate-180" : ""
                   }`}
                   viewBox="0 0 20 20"
@@ -82,8 +96,8 @@ const FAQSection = () => {
                 </svg>
               </button>
               {openFaq === faq.id && (
-                <div className="px-3 pb-2 text-xs border-t border-gray-100 bg-white">
-                  <p className="text-gray-600 pt-2">{faq.answer}</p>
+                <div className="px-4 pb-4 pt-2 text-sm border-t border-gray-100 bg-white">
+                  <p className="text-gray-600">{faq.answer}</p>
                 </div>
               )}
             </div>

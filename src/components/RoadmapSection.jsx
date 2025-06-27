@@ -1,99 +1,67 @@
 import React from "react";
 
-const kelasData = [
+const skillData = [
   {
-    nomor: 1,
-    judul: "Pengantar Ilmu Komputer",
-    topik: "Sejarah Komputer, Hardware, Software, Sistem Operasi",
-    materi: "15 Materi",
-    durasi: "1 Jam",
+    kategori: "Hard Skills",
+    icon: "🧠",
+    skills: [
+      "HTML, CSS, JavaScript",
+      "React.js, Tailwind CSS, Bootstrap",
+      "Node.js & Express.js",
+      "Git & GitHub Workflow",
+      "Python (AI & Data Basics)",
+      "PHP & Laravel Framework",
+    ],
   },
   {
-    nomor: 2,
-    judul: "Logika dan Algoritma Dasar",
-    topik:
-      "Flowchart, Pseudocode, Struktur Kontrol, Percabangan, Perulangan, Array",
-    materi: "25 Materi",
-    durasi: "2 Jam",
-  },
-  {
-    nomor: 3,
-    judul: "Pengantar Pemrograman Python",
-    topik: "Sintaks Dasar, Variabel, Tipe Data, Operator, Fungsi",
-    materi: "30 Materi",
-    durasi: "3 Jam",
-  },
-  {
-    nomor: 4,
-    judul: "Struktur Data & Algoritma Lanjutan",
-    topik: "List, Stack, Queue, Tree, Graph, Searching & Sorting",
-    materi: "40 Materi",
-    durasi: "4 Jam",
-  },
-  {
-    nomor: 5,
-    judul: "Dasar Pemrograman Berorientasi Objek (OOP)",
-    topik: "Konsep OOP: Class, Object, Inheritance, Polymorphism",
-    materi: "20 Materi",
-    durasi: "2 Jam",
+    kategori: "Soft Skills",
+    icon: "🤝",
+    skills: [
+      "Effective Communication",
+      "Creative Problem Solving",
+      "Time & Task Management",
+      "Leadership & Initiative",
+      "Adaptability in Fast-paced Teams",
+      "Team Collaboration & Empathy",
+    ],
   },
 ];
 
-const RoadmapSection = () => {
+const SkillsSection = () => {
   return (
-    <section className="container mx-auto px-4 py-8 bg-white text-white font-sans antialiased">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-black">
-          Roadmap Belajar Teknologi
+    <section className="container mx-auto px-4 py-16 bg-gray-50 text-gray-800 font-sans antialiased">
+      <header className="text-center mb-14">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-black">
+          🔧 Keahlian Utama Nadhim Alim
         </h1>
-        <p className="text-lg text-gray-400">
-          Daftar kelas unggulan yang bisa kamu pelajari untuk membangun karier
-          di dunia teknologi digital.
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Dengan kombinasi keterampilan teknis dan interpersonal, saya siap membangun solusi teknologi yang tangguh dan kolaboratif.
         </p>
       </header>
 
-      <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-        <div className="p-6">
-          <div className="hidden md:grid grid-cols-10 gap-4 text-gray-400 font-semibold mb-4 pb-2 border-b border-gray-700">
-            <div className="col-span-1">#</div>
-            <div className="col-span-3">Judul Kelas</div>
-            <div className="col-span-3">Topik Pembelajaran</div>
-            <div className="col-span-2">Total Materi</div>
-            <div className="col-span-1">Durasi</div>
-          </div>
-
-          {kelasData.map((kelas, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 md:grid-cols-10 gap-4 py-4 border-b border-gray-700"
-            >
-              <div className="md:col-span-1 text-gray-400">{kelas.nomor}</div>
-              <div className="md:col-span-3 font-semibold">
-                {kelas.judul}
-              </div>
-              <div className="md:col-span-3 text-gray-300 text-sm md:text-base">
-                {kelas.topik}
-              </div>
-              <div className="md:col-span-2 text-gray-300">{kelas.materi}</div>
-              <div className="md:col-span-1 text-gray-300">{kelas.durasi}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {skillData.map((section, index) => (
+          <div
+            key={index}
+            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition"
+          >
+            <div className="flex items-center mb-4">
+              <span className="text-3xl mr-3">{section.icon}</span>
+              <h3 className="text-2xl font-semibold text-blue-700">{section.kategori}</h3>
             </div>
-          ))}
-
-          <div className="mt-8 text-center">
-            <a
-              href="#semua-materi"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-lg"
-            >
-              Dapatkan akses ke semua materi!
-            </a>
-            <p className="text-sm text-gray-500 mt-2">
-              Awali langkahmu menuju dunia teknologi dengan percaya diri!
-            </p>
+            <ul className="space-y-3 mt-2">
+              {section.skills.map((skill, i) => (
+                <li key={i} className="text-gray-700 text-lg leading-relaxed flex items-start">
+                  <span className="text-blue-600 mr-2 mt-1">✔️</span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default RoadmapSection;
+export default SkillsSection;

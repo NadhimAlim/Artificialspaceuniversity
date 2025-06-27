@@ -1,136 +1,117 @@
 import React, { useState } from "react";
 
-const PricingSection = () => {
-  const [showPromo, setShowPromo] = useState(false);
+const allProjects = {
+  Website: [
+    {
+      title: "Sistem Akademik Sekolah",
+      description: "Platform manajemen siswa & guru berbasis Laravel.",
+      tech: ["Laravel", "MySQL", "Bootstrap"],
+      link: "#",
+    },
+    {
+      title: "Portfolio Website Interaktif",
+      description: "Website pribadi berbasis React & Tailwind CSS.",
+      tech: ["React", "Tailwind"],
+      link: "#",
+    },
+  ],
+  "UI/UX": [
+    {
+      title: "Redesign Aplikasi Bank",
+      description: "Studi UX dan pembuatan UI Kit mobile banking.",
+      tech: ["Figma", "Prototype", "User Flow"],
+      link: "#",
+    },
+    {
+      title: "Desain Landing Page Travel",
+      description: "Konsep desain landing page untuk startup travel.",
+      tech: ["Figma", "Hero Section", "UI Trend 2025"],
+      link: "#",
+    },
+  ],
+  AI: [],
+  Mobile: [],
+};
+
+const PortfolioSection = () => {
+  const [activeCategory, setActiveCategory] = useState("Website");
+
+  const availableProjects = allProjects[activeCategory];
 
   return (
-    <section id="pricing" className="py-16 bg-gray-100">
+    <section id="portfolio" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">Pilih Paket Belajar Anda</h2>
-          <p className="text-gray-500 mt-2">Pilih paket yang sesuai dengan kebutuhan belajar Anda</p>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">💼 Portofolio Nadhim</h2>
+          <p className="text-gray-500 mt-2">
+            Pilih kategori untuk melihat proyek yang pernah saya kerjakan.
+          </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="flex justify-center flex-wrap gap-4 mb-10">
+          {Object.keys(allProjects).map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 rounded-full border font-semibold transition ${
+                activeCategory === category
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-blue-100"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* STARTER PLAN */}
-          <div className="bg-white border-2 border-green-500 rounded-xl p-6 shadow-sm">
-            <h3 className="text-green-600 text-xl font-bold text-center mb-4">
-              🌱 STARTER PLAN
-            </h3>
-
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold text-green-600">Rp 0</h2>
-              <p className="text-gray-500 text-sm">Selamanya gratis</p>
-            </div>
-
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <div className="p-2 bg-green-100 rounded-full mr-3">
-                  ✅
+          {availableProjects.length > 0 ? (
+            availableProjects.map((project, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+              >
+                <h3 className="text-xl font-bold text-blue-700 mb-2">{project.title}</h3>
+                <p className="text-gray-700 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div>
-                  <p className="font-semibold">Akses Materi Dasar</p>
-                  <p className="text-gray-500 text-sm">100+ video pembelajaran di YouTube</p>
-                </div>
-              </li>
-
-              <li className="flex items-start">
-                <div className="p-2 bg-green-100 rounded-full mr-3">
-                  👥
-                </div>
-                <div>
-                  <p className="font-semibold">Komunitas Publik</p>
-                  <p className="text-gray-500 text-sm">Forum diskusi terbatas</p>
-                </div>
-              </li>
-
-              {["Akses Video Premium", "Sesi Mentoring", "Dukungan Prioritas"].map((item, idx) => (
-                <li key={idx} className="flex items-start">
-                  <div className="p-2 bg-red-100 rounded-full mr-3">🔒</div>
-                  <div>
-                    <p className="text-gray-400">{item}</p>
-                    <p className="text-gray-400 text-sm">Tersedia di paket premium</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6">
-              <button className="w-full border-2 border-green-600 text-green-600 py-3 font-bold rounded-lg hover:bg-green-600 hover:text-white transition">
-                ▶️ MULAI SEKARANG
-              </button>
-              <p className="text-center text-gray-500 text-sm mt-3">
-                👨‍👩‍👧‍👦 5,000+ member gratis
-              </p>
-            </div>
-          </div>
-
-          {/* PREMIUM PLAN */}
-          <div className="bg-white shadow-lg rounded-xl p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-black">💎 PREMIUM ALL ACCESS</h3>
-              <span className="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full">🔥 MOST POPULAR</span>
-            </div>
-
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold text-blue-600">Rp 2.000.000</h2>
-              <p className="text-gray-500 text-sm">/tahun (Rp 166.000/bulan)</p>
-            </div>
-
-            <ul className="space-y-4">
-              {[
-                ["Full Akses Video Premium", "500+ modul belajar teknologi lengkap"],
-                ["Komunitas VIP Eksklusif", "Networking dengan profesional"],
-                ["Alat Developer Profesional", "GitHub Pro, VS Code Extensions, dll"],
-                ["Mentoring 1-on-1", "4 sesi privat dengan mentor ahli"],
-                ["Bonus Eksklusif", "Workshop offline, template project, & sertifikat"]
-              ].map(([title, desc], idx) => (
-                <li key={idx} className="flex items-start">
-                  <div className="p-2 bg-blue-100 rounded-full mr-3">✅</div>
-                  <div>
-                    <p className="font-semibold">{title}</p>
-                    <p className="text-gray-500 text-sm">{desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 space-y-4">
-              <button className="w-full bg-blue-600 text-white py-3 font-bold rounded-lg hover:bg-blue-700 transition">
-                🚀 DAFTAR SEKARANG
-              </button>
-
-              <div className="text-center">
-                <button
-                  className="text-sm text-blue-600 hover:underline"
-                  onClick={() => setShowPromo(!showPromo)}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-600 font-semibold hover:underline"
                 >
-                  🎫 Punya Kode Promo?
-                </button>
+                  🔗 Lihat Proyek
+                </a>
               </div>
-
-              {showPromo && (
-                <div className="mt-2 flex flex-col sm:flex-row gap-2">
-                  <input
-                    type="text"
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2"
-                    placeholder="Masukkan kode promo"
-                  />
-                  <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
-                    🚀 DAFTAR SEKARANG
-                  </button>
-                </div>
-              )}
+            ))
+          ) : (
+            <div className="col-span-2 text-center text-gray-500">
+              <p className="text-lg">🚧 Belum ada proyek untuk kategori ini.</p>
+              <button
+                className="mt-4 px-5 py-2 bg-gray-200 text-gray-600 rounded-full cursor-not-allowed"
+                disabled
+              >
+                Segera Hadir
+              </button>
             </div>
-
-            <p className="text-center text-gray-500 text-sm mt-3">
-              ⚡ 1,200+ member aktif
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default PricingSection;
+export default PortfolioSection;
+
+
