@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Footer = () => {
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_uakcgza",     // Ganti dengan service ID dari EmailJS
+        "template_zd6xj4s",    // Ganti dengan template ID dari EmailJS
+        formRef.current,
+        "mSJCO_NsfdQ76e3Nn"      // Ganti dengan Public Key (bukan private key!)
+      )
+      .then(
+        () => {
+          setStatus("✅ Pesan berhasil dikirim!");
+          formRef.current.reset();
+        },
+        (error) => {
+          setStatus("❌ Gagal mengirim pesan. Coba lagi.");
+          console.error(error);
+        }
+      );
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
@@ -8,12 +34,8 @@ const Footer = () => {
           {/* === Informasi Kontak === */}
           <div>
             <h3 className="text-xl font-bold mb-4">Nadhim Alim</h3>
-            <p className="text-sm text-gray-400 mb-2">
-              📍 Yogyakarta, Indonesia
-            </p>
-            <p className="text-sm text-gray-400 mb-2">
-              ✉️ nadhimalim@gmail.com
-            </p>
+            <p className="text-sm text-gray-400 mb-2">📍 Yogyakarta, Indonesia</p>
+            <p className="text-sm text-gray-400 mb-2">✉️ nadhimalim@gmail.com</p>
             <p className="text-sm text-gray-400">
               Terbuka untuk kerja remote maupun onsite.
             </p>
@@ -53,15 +75,23 @@ const Footer = () => {
           {/* === Form Pesan === */}
           <div>
             <h3 className="text-xl font-bold mb-4">Kirim Pesan</h3>
-            <form className="flex flex-col gap-3 mt-6 max-w-md">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="flex flex-col gap-4 mt-6 max-w-md"
+            >
               <input
                 type="email"
+                name="user_email"
                 placeholder="Alamat Email"
+                required
                 className="px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none"
               />
               <textarea
+                name="message"
                 placeholder="Tulis pesan Anda..."
                 rows="4"
+                required
                 className="px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none"
               />
               <button
@@ -70,6 +100,9 @@ const Footer = () => {
               >
                 Kirim Pesan
               </button>
+              {status && (
+                <p className="text-sm mt-2 text-green-400">{status}</p>
+              )}
             </form>
           </div>
         </div>
