@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload, FaPaperPlane } from "react-icons/fa";
 // import nadhimImg from "../assets/nadhimalim.jpg";
-import profileVideo from "../assets/videoperkenalan.mp4";
+import profileVideo from "../assets/video.mp4";
 
 const HeroSection = () => {
   return (
@@ -62,12 +62,10 @@ const HeroSection = () => {
           <video
             src={profileVideo}
             className="w-full max-w-2xl h-64 md:h-80 rounded-xl object-cover mx-auto shadow-xl ring-4 ring-yellow-400 transform hover:scale-105 transition"
-            
-
             autoPlay
-  loop
-  controls
-  playsInline
+            loop
+            controls
+            playsInline
           ></video>
         </div>
       </div>
