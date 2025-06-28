@@ -1,67 +1,88 @@
 import React from "react";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPhp,
+  SiPython,
+  SiGit,
+} from "react-icons/si";
 
-const skillData = [
-  {
-    kategori: "Hard Skills",
-    icon: "🧠",
-    skills: [
-      "HTML, CSS, JavaScript",
-      "React.js, Tailwind CSS, Bootstrap",
-      "Node.js & Express.js",
-      "Git & GitHub Workflow",
-      "Python (AI & Data Basics)",
-      "PHP & Laravel Framework",
-    ],
-  },
-  {
-    kategori: "Soft Skills",
-    icon: "🤝",
-    skills: [
-      "Effective Communication",
-      "Creative Problem Solving",
-      "Time & Task Management",
-      "Leadership & Initiative",
-      "Adaptability in Fast-paced Teams",
-      "Team Collaboration & Empathy",
-    ],
-  },
+const hardSkills = [
+  { name: "HTML", icon: <SiHtml5 className="text-orange-500 text-5xl" /> },
+  { name: "CSS", icon: <SiCss3 className="text-blue-500 text-5xl" /> },
+  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400 text-5xl" /> },
+  { name: "React", icon: <SiReact className="text-cyan-400 text-5xl animate-spin-slow" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400 text-5xl" /> },
+  { name: "Node.js", icon: <SiNodedotjs className="text-green-600 text-5xl" /> },
+  { name: "PHP", icon: <SiPhp className="text-indigo-600 text-5xl" /> },
+  { name: "Python", icon: <SiPython className="text-yellow-500 text-5xl" /> },
+  { name: "Git", icon: <SiGit className="text-red-500 text-5xl" /> },
 ];
 
-const SkillsSection = () => {
-  return (
-    <section className="container mx-auto px-4 py-16 bg-gray-50 text-gray-800 font-sans antialiased">
-      <header className="text-center mb-14">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-black">
-          🔧 Keahlian Utama Nadhim Alim
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Dengan kombinasi keterampilan teknis dan interpersonal, saya siap membangun solusi teknologi yang tangguh dan kolaboratif.
-        </p>
-      </header>
+const softSkills = [
+  "Effective Communication",
+  "Creative Problem Solving",
+  "Time & Task Management",
+  "Leadership & Initiative",
+  "Adaptability in Fast-paced Teams",
+  "Team Collaboration & Empathy",
+];
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {skillData.map((section, index) => (
-          <div
-            key={index}
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition"
-          >
-            <div className="flex items-center mb-4">
-              <span className="text-3xl mr-3">{section.icon}</span>
-              <h3 className="text-2xl font-semibold text-blue-700">{section.kategori}</h3>
-            </div>
-            <ul className="space-y-3 mt-2">
-              {section.skills.map((skill, i) => (
-                <li key={i} className="text-gray-700 text-lg leading-relaxed flex items-start">
-                  <span className="text-blue-600 mr-2 mt-1">✔️</span>
-                  {skill}
-                </li>
+const SkillPage = () => {
+  return (
+    <section className="bg-gradient-to-br from-white to-blue-50 py-20 font-sans">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+            💡 Skillset <span className="text-blue-600">Nadhim Alim</span>
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto text-lg">
+            Kombinasi keahlian teknis dan interpersonal untuk membangun solusi teknologi yang berdampak.
+          </p>
+        </div>
+
+        {/* Hard Skills Section */}
+        <div className="mb-20">
+          {/* <h3 className="text-2xl font-semibold text-blue-700 mb-6">🚀 Hard Skills</h3> */}
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 w-max snap-x snap-mandatory pb-4 px-1">
+              {hardSkills.map((skill, idx) => (
+                <div
+                  key={idx}
+                  className="snap-center min-w-[130px] bg-white rounded-xl p-5 flex flex-col items-center justify-center text-center shadow hover:shadow-lg transition"
+                >
+                  <div className="mb-3">{skill.icon}</div>
+                  <span className="text-sm font-medium text-gray-800">{skill.name}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
+        </div>
+
+        {/* Soft Skills Section */}
+        <div>
+          {/* <h3 className="text-2xl font-semibold text-blue-700 mb-6">🤝 Soft Skills</h3> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {softSkills.map((skill, i) => (
+              <div
+                key={i}
+                className="bg-blue-100 rounded-xl p-6 text-blue-900 shadow hover:shadow-md transition"
+              >
+                <p className="text-md font-medium flex items-start">
+                  <span className="text-blue-700 mr-2 text-lg">✔️</span> {skill}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default SkillsSection;
+export default SkillPage;

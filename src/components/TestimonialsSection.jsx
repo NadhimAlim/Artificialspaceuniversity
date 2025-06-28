@@ -1,37 +1,21 @@
 import React from "react";
 
-const newsData = [
+const youtubeVideos = [
   {
-    title: "AI dan Masa Depan Dunia Kerja",
-    source: "Kompas Tekno",
-    date: "27 Juni 2025",
-    summary:
-      "AI diprediksi akan menggantikan banyak pekerjaan rutin, namun juga membuka peluang baru di bidang kreatif dan analitik.",
-    link: "https://tekno.kompas.com/read/ai-dan-masa-depan",
+    title: "Pengalaman Kuliah Informatika Semester 1–4 | Cerita Seru Kita di Dunia IT!",
+    src: "https://www.youtube.com/embed/qVZ4IEgp34A?si=juRcjCZIK6CKV5nf", // panjang
   },
   {
-    title: "Tailwind CSS Kian Mendominasi",
-    source: "DetikINET",
-    date: "26 Juni 2025",
-    summary:
-      "Tailwind CSS semakin populer karena fleksibilitas tinggi dan integrasi yang mudah dengan framework modern.",
-    link: "https://inet.detik.com/read/tailwind-populer",
+    title: "Apa itu HTML CSS DAN JavaScript",
+    src: "https://www.youtube.com/embed/1xlFbMg9de8", // short
   },
   {
-    title: "Web3: Masa Depan Internet",
-    source: "Tech in Asia",
-    date: "25 Juni 2025",
-    summary:
-      "Web3 membawa konsep kepemilikan digital dan desentralisasi sebagai fondasi internet generasi berikutnya.",
-    link: "https://www.techinasia.com/web3-revolusi-internet",
+    title: "Beda Website Dinamis dan Statis?",
+    src: "https://www.youtube.com/embed/SWNtnw0FUfY",
   },
   {
-    title: "Python Masih Raja Pemrograman",
-    source: "Stack Overflow",
-    date: "24 Juni 2025",
-    summary:
-      "Python tetap jadi bahasa favorit developer global karena kesederhanaan dan dukungan ekosistem AI.",
-    link: "https://stackoverflow.com/read/python-2025",
+    title: "Beda Array dan Linked List",
+    src: "https://www.youtube.com/embed/4p8MrNQux2o",
   },
 ];
 
@@ -40,40 +24,30 @@ const NewsSection = () => {
     <section id="news" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-900">📰 Berita Teknologi</h2>
+          <h2 className="text-4xl font-bold text-gray-900">📺 Video Teknologi</h2>
           <p className="text-lg text-gray-600 mt-2">
-            Update terkini dunia teknologi, pemrograman, dan inovasi digital.
+            Video pilihan tentang teknologi, web development, dan AI.
           </p>
         </div>
 
-        {/* Scrollable container */}
         <div className="overflow-x-auto">
           <div className="flex space-x-6 snap-x snap-mandatory pb-4 px-1">
-            {newsData.map((item, index) => (
+            {youtubeVideos.map((video, index) => (
               <div
                 key={index}
-                className="min-w-[280px] md:min-w-[340px] lg:min-w-[380px] snap-center bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-6 flex flex-col justify-between"
+                className="min-w-[300px] md:min-w-[360px] snap-center rounded-xl shadow-lg overflow-hidden"
               >
-                <div>
-                  <h3 className="text-xl font-bold text-blue-700 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-2">
-                    {item.source} • {item.date}
-                  </p>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {item.summary}
-                  </p>
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={video.src}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
-                <div className="mt-4">
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-600 font-semibold hover:underline"
-                  >
-                    Baca Selengkapnya →
-                  </a>
+                <div className="bg-gray-100 p-3 text-sm text-gray-800 font-semibold text-center">
+                  {video.title}
                 </div>
               </div>
             ))}
@@ -85,3 +59,4 @@ const NewsSection = () => {
 };
 
 export default NewsSection;
+

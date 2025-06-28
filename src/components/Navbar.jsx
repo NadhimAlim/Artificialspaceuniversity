@@ -56,12 +56,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pb-3">
             <div className="px-2 pt-2 space-y-1">
-              <Link
-                to="/kurikulum"
-                className="block px-3 py-2 hover:bg-gray-100 rounded-md"
-              >
-                Lihat Kurikulum
-              </Link>
+              
               <Link
                 to="/login"
                 className="block px-3 py-2 hover:bg-gray-100 rounded-md"
