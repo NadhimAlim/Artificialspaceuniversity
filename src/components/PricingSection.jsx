@@ -3,19 +3,12 @@ import portfolioImg from "../assets/portofolio.png";
 import portfolioImg2 from "../assets/portofolio2.png";
 import portfolioImg3 from "../assets/portofolio3.png";
 import portfolioImg4 from "../assets/portofolio4.png";
-import certifImg from "../assets/sertifikatlaravel.jpeg"; // tambahkan gambarnya di folder assets
-import certifImg2 from "../assets/sertifikatwesclic.jpeg"; 
-import certifImg3 from "../assets/sertifikatblockchain1.jpeg"; 
+import certifImg from "../assets/sertifikatlaravel.jpeg";
+import certifImg2 from "../assets/sertifikatwesclic.jpeg";
+import certifImg3 from "../assets/sertifikatblockchain1.jpeg";
 
 const projects = {
-  Website: [
-    {
-      title: "Website Komunitas Project Iseng-Iseng",
-      description: "Project iseng untuk portofolio pribadi.",
-      tech: ["React", "Tailwind", "Bootstrap"],
-      image: portfolioImg,
-      link: "https://codecrimping.vercel.app",
-    },
+  Frontend: [
     {
       title: "Portfolio Website Interaktif SiCepat",
       description: "Website berbasis HTML • CSS • JS • PHP.",
@@ -37,6 +30,15 @@ const projects = {
       image: portfolioImg4,
       link: "https://nadhim-alimid.vercel.app",
     },
+    {
+      title: "Website Komunitas Project Iseng-Iseng",
+      description: "Project backend dengan React, Tailwind & Bootstrap.",
+      tech: ["React", "Tailwind", "Bootstrap"],
+      image: portfolioImg,
+      link: "https://codecrimping.vercel.app",
+    },
+  ],
+  Backend: [
   ],
   "UI/UX": [
     {
@@ -52,24 +54,24 @@ const projects = {
       link: "#",
     },
   ],
-  AI: [],
   Mobile: [],
+  AI: [],
   Sertifikat: [
     {
       title: "Sertifikat Laravel 9",
-      description: "Kursus Online laravel di coding studio",
+      description: "Kursus Online Laravel di Coding Studio",
       image: certifImg,
       link: "./assets/sertifikatlaravel.jpeg",
     },
     {
-      title: "Magang Copywriting di wesclic",
-      description: "magang di wesclic neo",
+      title: "Magang Copywriting di Wesclic",
+      description: "Program magang di Wesclic Neo",
       image: certifImg2,
       link: "./assets/sertifikatwesclic.jpeg",
     },
     {
-      title: "Kursus Dasar Web3 dan Blockchain",
-      description: "kursus online di myskill",
+      title: "Kursus Dasar Web3 & Blockchain",
+      description: "Kursus online Web3 di MySkill",
       image: certifImg3,
       link: "./assets/sertifikatblockchain1.jpeg",
     },
@@ -77,7 +79,7 @@ const projects = {
 };
 
 const PortfolioSection = () => {
-  const [activeCat, setActiveCat] = useState("Website");
+  const [activeCat, setActiveCat] = useState("Frontend");
   const list = projects[activeCat];
 
   return (
@@ -87,11 +89,11 @@ const PortfolioSection = () => {
         <header className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-800">💼 Portofolio Nadhim</h2>
           <p className="text-gray-500 mt-2">
-            Pilih kategori untuk melihat proyek yang pernah saya kerjakan.
+            Pilih kategori untuk melihat proyek dan sertifikat yang pernah saya selesaikan.
           </p>
         </header>
 
-        {/* Filter */}
+        {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-4 mb-10">
           {Object.keys(projects).map((cat) => (
             <button
@@ -108,7 +110,7 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* Cards */}
+        {/* Card List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {list.length ? (
             list.map((p, i) => (
@@ -127,7 +129,6 @@ const PortfolioSection = () => {
                 <h3 className="text-lg font-bold text-blue-700 mb-1">{p.title}</h3>
                 <p className="text-gray-700 mb-3 text-sm">{p.description}</p>
 
-                {/* Sertifikat download button */}
                 {activeCat === "Sertifikat" ? (
                   <a
                     href={p.link}
