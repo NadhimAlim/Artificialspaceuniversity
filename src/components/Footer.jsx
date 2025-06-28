@@ -2,64 +2,81 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Info Pribadi */}
+    <footer className="bg-gray-900 text-white py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* === Informasi Kontak === */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Nadhim Alim</h3>
-            <address className="not-italic text-sm leading-relaxed">
-              <p className="mb-2">Yogyakarta, Indonesia</p>
-              <p className="mb-2">Email: nadhimalim@gmail.com</p>
-              <p>Terbuka untuk kerja remote maupun onsite.</p>
-            </address>
+            <h3 className="text-xl font-bold mb-4">Nadhim Alim</h3>
+            <p className="text-sm text-gray-400 mb-2">
+              📍 Yogyakarta, Indonesia
+            </p>
+            <p className="text-sm text-gray-400 mb-2">
+              ✉️ nadhimalim@gmail.com
+            </p>
+            <p className="text-sm text-gray-400">
+              Terbuka untuk kerja remote maupun onsite.
+            </p>
+
+            {/* Sosial Media */}
+            <div className="mt-6">
+              <h4 className="font-semibold mb-3">Temukan Saya di:</h4>
+              <div className="flex space-x-5 text-xl">
+                <a
+                  href="https://linkedin.com/in/nadhimalim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/nadhimalim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-400 transition"
+                >
+                  <i className="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://instagram.com/nadhim.alim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-400 transition"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Social Media */}
+          {/* === Form Pesan === */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Temukan Saya di</h3>
-            <div className="flex gap-4">
-              {/* LinkedIn */}
-              <a
-                href="https://linkedin.com/in/nadhimalim"
-                className="text-gray-300 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
+            <h3 className="text-xl font-bold mb-4">Kirim Pesan</h3>
+            <form className="flex flex-col gap-3 mt-6 max-w-md">
+              <input
+                type="email"
+                placeholder="Alamat Email"
+                className="px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none"
+              />
+              <textarea
+                placeholder="Tulis pesan Anda..."
+                rows="4"
+                className="px-4 py-2 rounded bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none"
+              />
+              <button
+                type="submit"
+                className="w-fit bg-blue-400 text-blue-900 font-semibold px-6 py-2 rounded hover:bg-blue-300 transition self-start"
               >
-                <i className="fab fa-linkedin text-xl"></i>
-              </a>
-
-              {/* GitHub */}
-              <a
-                href="https://github.com/nadhimalim"
-                className="text-gray-300 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href="https://instagram.com/nadhim.alim"
-                className="text-gray-300 hover:text-white transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <i className="fab fa-instagram text-xl"></i>
-              </a>
-            </div>
+                Kirim Pesan
+              </button>
+            </form>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-gray-400 text-sm">
-            &copy; 2025 Nadhim Alim.
-          </p>
+        <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Nadhim Alim. All rights reserved.
         </div>
       </div>
     </footer>

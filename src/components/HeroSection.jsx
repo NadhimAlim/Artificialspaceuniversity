@@ -8,11 +8,11 @@ const HeroSection = () => {
     <section className="relative bg-gradient-to-br from-indigo-900 via-indigo-800 to-black text-white overflow-hidden">
       {/* Background overlay image */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/img/nadhim-bg.jpg"
           alt="Nadhim Alim background"
           className="w-full h-full object-cover mix-blend-overlay opacity-30"
-        />
+        /> */}
       </div>
 
       <div className="container mx-auto px-4 py-32 relative z-10 flex flex-col lg:flex-row items-center gap-12">
