@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-sessionStorage.setItem("registrationData", JSON.stringify({
-  username: "nadhim",
-  email: "nadhim@gmail.com",
-  password: "123456"
-}));
+// Simpan daftar user hanya sekali saat awal (testing/admin setup)
+if (!sessionStorage.getItem("users")) {
+  sessionStorage.setItem("users", JSON.stringify([
+    {
+      username: "nadhim",
+      email: "nadhim@gmail.com",
+      password: "123456"
+    },
+    {
+      username: "admin",
+      email: "admin@example.com",
+      password: "admin123"
+    }
+  ]));
+}
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,13 +25,17 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const storedData = sessionStorage.getItem("registrationData");
-    if (storedData) {
-      const userData = JSON.parse(storedData);
-      if (
-        (usernameEmail === userData.username || usernameEmail === userData.email) &&
-        password === userData.password
-      ) {
+    const storedUsers = sessionStorage.getItem("users");
+    if (storedUsers) {
+      const users = JSON.parse(storedUsers);
+
+      const matchedUser = users.find(
+        (user) =>
+          (user.username === usernameEmail || user.email === usernameEmail) &&
+          user.password === password
+      );
+
+      if (matchedUser) {
         alert("Login berhasil!");
         sessionStorage.setItem("isLoggedIn", "true");
         navigate("/dashboard");
@@ -29,7 +43,7 @@ const Login = () => {
         alert("Username atau password salah.");
       }
     } else {
-      alert("Akun tidak ditemukan. Silakan hubungi admin via WhatsApp untuk pendaftaran.");
+      alert("Tidak ada akun terdaftar. Silakan hubungi admin.");
     }
   };
 
