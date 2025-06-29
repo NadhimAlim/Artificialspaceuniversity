@@ -55,7 +55,14 @@ const projects = {
     },
   ],
   Mobile: [],
-  AI: [],
+  AI: [
+    {
+      title: "Sistem Otomatisasi Klasifikasi Prestasi Akademik Siswa Berbasis AI dan Algoritma Random Forest",
+    description: "Tugas Akhir Semester KCB",
+    tech: ["Python", "Random Forest", "Sklearn", "Pandas"],
+    link: "#",
+    },
+  ],
   Sertifikat: [
     {
       title: "Sertifikat Laravel 9",
