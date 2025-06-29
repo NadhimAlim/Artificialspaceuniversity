@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+sessionStorage.setItem("registrationData", JSON.stringify({
+  username: "nadhim",
+  email: "nadhim@gmail.com",
+  password: "123456"
+}));
+
 const Login = () => {
   const navigate = useNavigate();
   const [usernameEmail, setUsernameEmail] = useState("");
@@ -9,7 +15,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Simulasi login menggunakan sessionStorage
     const storedData = sessionStorage.getItem("registrationData");
     if (storedData) {
       const userData = JSON.parse(storedData);
@@ -18,19 +23,20 @@ const Login = () => {
         password === userData.password
       ) {
         alert("Login berhasil!");
-        navigate("/pembayaran");
+        sessionStorage.setItem("isLoggedIn", "true");
+        navigate("/dashboard");
       } else {
         alert("Username atau password salah.");
       }
     } else {
-      alert("Belum ada akun terdaftar. Silakan daftar terlebih dahulu.");
+      alert("Akun tidak ditemukan. Silakan hubungi admin via WhatsApp untuk pendaftaran.");
     }
   };
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md bg-zinc-900 p-8 rounded-lg shadow">
-        <h2 className="text-3xl font-bold text-white mb-4">Login Akun</h2>
+        <h2 className="text-3xl font-bold text-white mb-4">Login Member</h2>
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label className="text-sm text-white block mb-1">Username / Email</label>
@@ -52,21 +58,8 @@ const Login = () => {
               required
             />
           </div>
-          <div className="flex justify-between text-sm">
-            <button
-              type="button"
-              onClick={() => alert("Fitur lupa password belum tersedia")}
-              className="text-blue-400 hover:underline"
-            >
-              Lupa Password?
-            </button>
-            <button
-              type="button"
-              onClick={() => navigate("/register")}
-              className="text-blue-400 hover:underline"
-            >
-              Daftar Akun
-            </button>
+          <div className="text-sm text-gray-400">
+            Akun dibuat oleh admin. Hubungi via <span className="text-green-400">WhatsApp</span> untuk pendaftaran.
           </div>
           <button
             type="submit"

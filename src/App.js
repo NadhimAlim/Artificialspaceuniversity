@@ -11,6 +11,7 @@ import FAQSection from './components/FAQSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard'; // ✅ tambahkan ini
 
 function App() {
   return (
@@ -38,7 +39,9 @@ function App() {
 
           {/* Halaman Login */}
           <Route path="/login" element={<Login />} />
-          
+
+          {/* Halaman Dashboard Member */}
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Area | Nadhim Alim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col p-6">
+      <div class="mb-10">
+        <h1 class="text-xl font-bold">Nadhim Alim</h1>
+        <p class="text-sm text-gray-400">Member Area</p>
+      </div>
+      <nav class="flex-1 space-y-4">
+        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-800">Home</a>
+        <a href="#berita" class="block py-2 px-3 rounded hover:bg-gray-800">Berita</a>
+        <a href="#video" class="block py-2 px-3 rounded hover:bg-gray-800">Video Saya</a>
+        <a href="#kegiatan" class="block py-2 px-3 rounded hover:bg-gray-800">Kegiatan</a>
+        <a href="#akun" class="block py-2 px-3 rounded hover:bg-gray-800">Akun Saya</a>
+        <a href="#" class="block py-2 px-3 rounded hover:bg-red-600">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 space-y-8">
+      <!-- Header -->
+      <section class="bg-white rounded-xl p-6 shadow">
+        <h2 class="text-2xl font-semibold">Selamat Datang, Nadhim 👋</h2>
+        <p class="text-sm text-gray-500 mt-1">Di halaman member eksklusif Anda.</p>
+        <div class="mt-4 space-x-2">
+          <a href="#berita" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Lihat Berita</a>
+          <a href="#video" class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300">Lihat Video</a>
+          <a href="#kegiatan" class="px-4 py-2 bg-green-200 text-green-900 rounded hover:bg-green-300">Lihat Kegiatan</a>
+        </div>
+      </section>
+
+      <!-- Berita Section -->
+      <section id="berita">
+        <h3 class="text-xl font-bold mb-4">📰 Berita Terbaru</h3>
+        <div class="space-y-4">
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">Berita Judul 1</h4>
+            <p class="text-sm text-gray-600">Ini adalah ringkasan berita yang informatif tentang kegiatan terbaru saya...</p>
+            <span class="text-xs text-gray-400">Diposting: 29 Juni 2025</span>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="text-lg font-semibold">Berita Judul 2</h4>
+            <p class="text-sm text-gray-600">Update tentang acara coding dan teknologi yang saya ikuti baru-baru ini...</p>
+            <span class="text-xs text-gray-400">Diposting: 25 Juni 2025</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section id="video">
+        <h3 class="text-xl font-bold mt-10 mb-4">🎥 Video Saya</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded shadow">
+            <video controls class="w-full rounded">
+              <source src="video/nadhim-video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2 text-sm font-medium text-gray-700">Vlog: Hari Produktif</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <video controls class="w-full rounded">
+              <source src="video/nadhim-video2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="mt-2 text-sm font-medium text-gray-700">Behind The Scene Project</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kegiatan Section -->
+      <section id="kegiatan">
+        <h3 class="text-xl font-bold mt-10 mb-4">📅 Kegiatan Saya</h3>
+        <ul class="space-y-4">
+          <li class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold text-gray-800">Meetup Komunitas Coding</h4>
+            <p class="text-sm text-gray-600">Menghadiri acara meetup developer di Yogyakarta dan berdiskusi tentang Web3 dan AI.</p>
+            <span class="text-xs text-gray-400">Tanggal: 20 Juni 2025</span>
+          </li>
+          <li class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold text-gray-800">Workshop Pemrograman Dasar</h4>
+            <p class="text-sm text-gray-600">Mengajar peserta baru tentang dasar HTML, CSS, dan JavaScript.</p>
+            <span class="text-xs text-gray-400">Tanggal: 15 Juni 2025</span>
+          </li>
+          <li class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold text-gray-800">Pengerjaan Proyek Portofolio</h4>
+            <p class="text-sm text-gray-600">Mengembangkan tampilan website pribadi dan fitur halaman member menggunakan Tailwind CSS.</p>
+            <span class="text-xs text-gray-400">Tanggal: 12 Juni 2025</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Akun Section -->
+      <section id="akun" class="mt-10">
+        <h3 class="text-xl font-bold mb-4">👤 Akun Saya</h3>
+        <div class="bg-white p-6 rounded shadow space-y-2">
+          <p><strong>Nama:</strong> Nadhim Alim</p>
+          <p><strong>Email:</strong> nadhimalim@gmail.com</p>
+          <p><strong>Member Sejak:</strong> Januari 2025</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
