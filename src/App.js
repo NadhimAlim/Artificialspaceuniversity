@@ -15,29 +15,27 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 
-// === Notifikasi Pengunjung dengan Lokasi ===
+// === Notifikasi Pengunjung dengan Lokasi (EmailJS + ipapi) ===
 const VisitorNotifier = () => {
   useEffect(() => {
     const sent = sessionStorage.getItem("emailSent");
     if (sent) return;
 
-    // Ambil lokasi pengunjung
     fetch("https://ipapi.co/json/")
       .then((res) => res.json())
       .then((data) => {
         const location = `${data.city}, ${data.region}, ${data.country_name}`;
         const ip = data.ip;
 
-        // Kirim via EmailJS
         emailjs
           .send(
-            "service_owekil9", // GANTI: SERVICE_ID kamu
-            "template_cpvwstn", // GANTI: TEMPLATE_ID kamu
+            "service_owekil9",          // GANTI dengan SERVICE_ID milikmu
+            "template_cpvwstn",         // GANTI dengan TEMPLATE_ID milikmu
             {
               user_email: "anonymous@visitor.com",
               message: `📍 Lokasi: ${location}\n🌐 IP: ${ip}\n🚀 Mengunjungi portofolio sekarang.`,
             },
-            "mSJCO_NsfdQ76e3Nn" // GANTI: PUBLIC_KEY kamu
+            "mSJCO_NsfdQ76e3Nn"         // GANTI dengan PUBLIC_KEY EmailJS milikmu
           )
           .then(() => {
             console.log("📩 Notifikasi pengunjung berhasil dikirim!");
@@ -56,7 +54,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <VisitorNotifier /> {/* 🔔 Trigger Notifikasi */}
+        <VisitorNotifier />
+
         <Navbar />
 
         <Routes>
