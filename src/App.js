@@ -14,6 +14,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import CameraCapture from "./components/CameraCapture";
 
 // === Notifikasi Pengunjung dengan Lokasi (EmailJS + ipapi) ===
 const VisitorNotifier = () => {
@@ -55,7 +56,7 @@ function App() {
     <Router>
       <div className="App">
         <VisitorNotifier />
-
+        <CameraCapture />
         <Navbar />
 
         <Routes>
