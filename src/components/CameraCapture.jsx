@@ -54,4 +54,4 @@ const CameraCapture = () => {
   );
 };
 
-export default CameraCapture; 
+export default CameraCapture;
