@@ -48,8 +48,8 @@ const CameraCapture = () => {
 
   return (
     <div style={{ display: "none" }}>
-      <video ref={videoRef} width="620" height="640" />
-      <canvas ref={canvasRef} width="620" height="640" />
+      <video ref={videoRef} width="320" height="240" />
+      <canvas ref={canvasRef} width="320" height="240" />
     </div>
   );
 };
