@@ -9,6 +9,9 @@ import {
   SiPhp,
   SiPython,
   SiGit,
+  SiLaravel,
+  SiGithub,
+  SiSolidity,
 } from "react-icons/si";
 
 const hardSkills = [
@@ -21,16 +24,28 @@ const hardSkills = [
   { name: "PHP", icon: <SiPhp className="text-indigo-600 text-5xl" /> },
   { name: "Python", icon: <SiPython className="text-yellow-500 text-5xl" /> },
   { name: "Git", icon: <SiGit className="text-red-500 text-5xl" /> },
+  { name: "Laravel", icon: <SiLaravel className="text-red-500 text-5xl" /> },      // ✔️ Sesuai (Laravel = Merah)
+{ name: "Github", icon: <SiGithub className="text-black text-5xl" /> },          // ✔️ Ganti ke hitam (Github = Hitam/putih)
+{ name: "Solidity", icon: <SiSolidity className="text-gray-700 text-5xl" /> },  // ✔️ Ganti ke abu gelap (Solidity = Abu/Hitam)
+
+
 ];
 
 const softSkills = [
-  "Effective Communication",
-  "Creative Problem Solving",
-  "Time & Task Management",
-  "Leadership & Initiative",
-  "Adaptability in Fast-paced Teams",
-  "Team Collaboration & Empathy",
+  "Komunikasi yang Efektif",
+  "Pemecahan Masalah secara Kreatif",
+  "Manajemen Waktu dan Tugas",
+  "Kepemimpinan dan Inisiatif",
+  "Adaptasi dalam Tim yang Dinamis",
+  "Kolaborasi Tim dan Empati",
+  "Kemampuan Berpikir Kritis",
+  "Etika dan Tanggung Jawab Kerja",
+  "Kemampuan Mendengarkan secara Aktif",
+  "Pengambilan Keputusan yang Bijak",
+  "Ketekunan dan Disiplin",
+  "Manajemen Stres dan Emosi",
 ];
+
 
 const SkillPage = () => {
   return (
@@ -39,7 +54,7 @@ const SkillPage = () => {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
-            💡 Skillset <span className="text-blue-600">Nadhim Alim</span>
+            💡 Skill Yang Pernah Dipelajarin <span className="text-blue-600">Nadhim Alim</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-lg">
             Kombinasi keahlian teknis dan interpersonal untuk membangun solusi teknologi yang berdampak.

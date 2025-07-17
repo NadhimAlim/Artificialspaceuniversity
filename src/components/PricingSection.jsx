@@ -6,6 +6,7 @@ import portfolioImg4 from "../assets/portofolio4.png";
 import certifImg from "../assets/sertifikatlaravel.jpeg";
 import certifImg2 from "../assets/sertifikatwesclic.jpeg";
 import certifImg3 from "../assets/sertifikatblockchain1.jpeg";
+import certifImg4 from "../assets/dokumentasiweb3.jpg";
 
 const projects = {
   Frontend: [
@@ -81,6 +82,12 @@ const projects = {
       description: "Kursus online Web3 di MySkill",
       image: certifImg3,
       link: "./assets/sertifikatblockchain1.jpeg",
+    },
+    {
+      title: "Mini Class Web3 & Blockchain",
+      description: "Mini Class Web3 di Jogja Coding House",
+      image: certifImg4,
+      link: "./assets/dokumentasiweb3.jpeg",
     },
   ],
 };

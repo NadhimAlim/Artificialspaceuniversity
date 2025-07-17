@@ -15,6 +15,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import CameraCapture from "./components/CameraCapture";
+//import SmartContractInterface from './components/SmartContractInterface';
+
 
 // === Notifikasi Pengunjung dengan Lokasi (EmailJS + ipapi) ===
 const VisitorNotifier = () => {
@@ -70,6 +72,8 @@ function App() {
                 <PricingSection />
                 <TestimonialsSection />
                 <SupportedBySection />
+                
+      {/* <SmartContractInterface /> */}
                 <FAQSection />
                 <Footer />
               </>
