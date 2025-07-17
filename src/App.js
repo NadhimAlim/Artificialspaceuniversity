@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import CameraCapture from "./components/CameraCapture";
+import News from "./components/pages/News";
 //import SmartContractInterface from './components/SmartContractInterface';
 
 
@@ -81,6 +82,9 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/news" element={<News />} />
+          
         </Routes>
       </div>
     </Router>
