@@ -5,72 +5,86 @@ const News = () => {
     {
       title: "RUU Keamanan Siber 2025 Resmi Disahkan",
       date: "14 Juli 2025",
-      content: "Pemerintah bersama DPR RI resmi mengesahkan RUU Keamanan Siber 2025...",
+      content:
+        "Pemerintah bersama DPR RI resmi mengesahkan RUU Keamanan Siber 2025...",
     },
     {
       title: "Indonesia Uji Coba Sistem Pemilu Digital Berbasis Blockchain",
       date: "8 Juli 2025",
-      content: "KPU dan Kominfo memulai uji coba sistem e-voting berbasis blockchain...",
+      content:
+        "KPU dan Kominfo memulai uji coba sistem e-voting berbasis blockchain...",
     },
     {
       title: "Pemanfaatan AI dalam Sektor Publik",
       date: "5 Juli 2025",
-      content: "AI kini digunakan untuk membantu proses birokrasi pemerintahan yang lebih efisien.",
+      content:
+        "AI kini digunakan untuk membantu proses birokrasi pemerintahan yang lebih efisien.",
     },
     {
       title: "Kemkominfo dan DPR Bahas RUU AI",
       date: "2 Juli 2025",
-      content: "Regulasi AI mulai dibahas menyusul peningkatan adopsi teknologi AI di sektor publik.",
+      content:
+        "Regulasi AI mulai dibahas menyusul peningkatan adopsi teknologi AI di sektor publik.",
     },
     {
       title: "Startup Blockchain Indonesia Raih Pendanaan",
       date: "30 Juni 2025",
-      content: "Startup teknologi berbasis blockchain mendapat pendanaan dari investor global.",
+      content:
+        "Startup teknologi berbasis blockchain mendapat pendanaan dari investor global.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     {
       title: "Proyek Cloud Nasional Resmi Diluncurkan",
       date: "28 Juni 2025",
-      content: "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
+      content:
+        "Pemerintah meluncurkan Cloud Nasional untuk mengamankan data strategis negara.",
     },
     // tambahkan lebih banyak berita jika mau
   ];
@@ -137,11 +151,21 @@ const News = () => {
         </div>
 
         {/* Sidebar Kalender + Trending + Newsletter */}
+        {/* Sidebar Lengkap */}
         <div className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-6">
+
+          {/* Quote Hari Ini */}
+          <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
+            <p className="text-sm text-gray-500 mb-1">💡 Quote Hari Ini</p>
+            <p className="italic text-gray-700 font-medium">
+              "jika masih diatas tanah maka masih diberi kesempatan oleh Allah Swt" – Nadhim Alim
+            </p>
+          </div>
+
           {/* Kalender */}
-          <div className="text-center">
+          <div className="text-center border-t pt-4">
             <h3 className="text-lg font-semibold text-gray-700 mb-2">
-              📅 Kalender
+              Kalender
             </h3>
             <div className="text-6xl font-bold text-blue-600">{tanggal}</div>
             <div className="text-gray-600 text-xl capitalize">
@@ -187,4 +211,3 @@ const News = () => {
 };
 
 export default News;
-
