@@ -17,8 +17,6 @@ import Dashboard from "./components/Dashboard";
 import CameraCapture from "./components/CameraCapture";
 import News from "./components/pages/News";
 import NewsDetail from "./components/pages/NewsDetail";
-//import SmartContractInterface from './components/SmartContractInterface';
-
 
 // === Notifikasi Pengunjung dengan Lokasi (EmailJS + ipapi) ===
 const VisitorNotifier = () => {
