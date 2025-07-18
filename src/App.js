@@ -16,6 +16,7 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import CameraCapture from "./components/CameraCapture";
 import News from "./components/pages/News";
+import NewsDetail from "./components/pages/NewsDetail";
 //import SmartContractInterface from './components/SmartContractInterface';
 
 
@@ -84,7 +85,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/news" element={<News />} />
-          
+          <Route path="/news/:id" element={<NewsDetail />} />
         </Routes>
       </div>
     </Router>

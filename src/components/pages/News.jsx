@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const News = () => {
   const newsData = [
@@ -9,10 +11,10 @@ const News = () => {
         "Pemerintah bersama DPR RI resmi mengesahkan RUU Keamanan Siber 2025...",
     },
     {
-      title: "Indonesia Uji Coba Sistem Pemilu Digital Berbasis Blockchain",
+      title: "Nadhim Alim Mengikuti Mini Class di Jogja Coding House",
       date: "8 Juli 2025",
       content:
-        "KPU dan Kominfo memulai uji coba sistem e-voting berbasis blockchain...",
+        "Nadhim Alim mengikuti mini class Web3 & Blockchain di Jogja Coding House...",
     },
     {
       title: "Pemanfaatan AI dalam Sektor Publik",
@@ -126,9 +128,15 @@ const News = () => {
               </h2>
               <p className="text-sm text-gray-500 mb-3">{item.date}</p>
               <p className="text-gray-700 mb-4">{item.content}</p>
-              <button className="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition duration-200">
+              {/* <button className="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition duration-200">
                 Baca Selengkapnya
-              </button>
+              </button> */}
+              <Link
+                to={`/news/${startIndex + index}`} // ← kirim id berita berdasarkan index
+                className="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition duration-200"
+              >
+                Baca Selengkapnya
+              </Link>
             </div>
           ))}
 
@@ -153,12 +161,12 @@ const News = () => {
         {/* Sidebar Kalender + Trending + Newsletter */}
         {/* Sidebar Lengkap */}
         <div className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-6">
-
           {/* Quote Hari Ini */}
           <div className="bg-gray-50 p-4 rounded-md border border-gray-200">
             <p className="text-sm text-gray-500 mb-1">💡 Quote Hari Ini</p>
             <p className="italic text-gray-700 font-medium">
-              "jika masih diatas tanah maka masih diberi kesempatan oleh Allah Swt" – Nadhim Alim
+              "jika masih diatas tanah maka masih diberi kesempatan oleh Allah
+              Swt" – Nadhim Alim
             </p>
           </div>
 
