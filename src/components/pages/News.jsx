@@ -137,7 +137,10 @@ const News = () => {
               >
                 Baca Selengkapnya
               </Link>
+
+              
             </div>
+            
           ))}
 
           {/* === Pagination Buttons === */}
@@ -155,7 +158,11 @@ const News = () => {
                 {i + 1}
               </button>
             ))}
+
+            
           </div>
+
+          
         </div>
 
         {/* Sidebar Kalender + Trending + Newsletter */}
@@ -195,6 +202,8 @@ const News = () => {
             </ul>
           </div>
 
+          
+
           {/* Newsletter */}
           <div className="border-t pt-4">
             <h4 className="text-md font-semibold text-gray-800 mb-2">
@@ -213,6 +222,15 @@ const News = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link
+          to="/"
+          className="inline-block px-5 py-3 bg-gray-100 text-blue-600 rounded-md hover:bg-gray-200 transition"
+        >
+          ← Kembali ke Halaman Utama
+        </Link>
       </div>
     </div>
   );
