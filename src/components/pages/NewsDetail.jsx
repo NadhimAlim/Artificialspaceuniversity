@@ -3,6 +3,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import berita1 from "../../assets/berita1.jpg";
 import dokumentasiweb3 from "../../assets/dokumentasiweb3.jpg";
+import pendidikanNadhim from "../../assets/pendidikannadhim.jpeg";
 
 const allNews = [
   {
@@ -19,19 +20,41 @@ const allNews = [
     tags: ["Keamanan Siber", "RUU", "BSSN", "AI", "Pemerintah"],
   },
   {
-  title: "Nadhim Alim Mengikuti Mini Class di Jogja Coding House",
-  date: "8 Juli 2025",
-  content: `Pada tanggal 28 Juni hingga 6 Juli 2025, Nadhim Alim mengikuti program Mini Class bertema "Web3 & Blockchain Fundamentals" yang diselenggarakan oleh Jogja Coding House. Acara ini dihadiri oleh puluhan peserta dari berbagai daerah yang antusias mempelajari teknologi desentralisasi dan pengembangan berbasis smart contract.
+    title: "Nadhim Alim Mengikuti Mini Class di Jogja Coding House",
+    date: "8 Juli 2025",
+    content: `Pada tanggal 28 Juni hingga 6 Juli 2025, Nadhim Alim mengikuti program Mini Class bertema "Web3 & Blockchain Fundamentals" yang diselenggarakan oleh Jogja Coding House. Acara ini dihadiri oleh puluhan peserta dari berbagai daerah yang antusias mempelajari teknologi desentralisasi dan pengembangan berbasis smart contract.
   Selama pelatihan berlangsung, peserta dibimbing langsung oleh mentor-mentor berpengalaman yang berasal dari komunitas blockchain lokal maupun startup teknologi. Materi yang diberikan meliputi dasar-dasar Web3, pengenalan wallet, konsep NFT, hingga pengembangan aplikasi menggunakan Solidity dan React.
   Nadhim menyampaikan bahwa pengalaman mengikuti Mini Class ini sangat berharga karena memberikan wawasan praktis dan langsung terkait dunia blockchain. “Ini bukan sekadar teori, tapi kami benar-benar membuat aplikasi dan deploy ke testnet,” ungkapnya.
   Selain sesi coding, peserta juga mendapatkan sesi diskusi terbuka tentang regulasi teknologi blockchain di Indonesia, serta bagaimana potensi teknologi ini dapat diterapkan dalam sistem pemerintahan dan keuangan digital.
   Pihak Jogja Coding House berharap bahwa kegiatan ini dapat mencetak lebih banyak talenta muda yang siap bersaing dalam ekosistem Web3 yang sedang berkembang pesat. Mereka juga berencana untuk mengadakan batch lanjutan di kota-kota lain di Indonesia.
   Mini Class ini diakhiri dengan sesi presentasi proyek dari peserta dan pemberian sertifikat sebagai bukti kelulusan. Nadhim Alim termasuk salah satu peserta yang dinilai aktif dan produktif selama pelatihan.`,
-  image: dokumentasiweb3,
-  author: "Nadhim Alim",
-  tags: ["Blockchain", "Web3", "Jogja Coding House", "Mini Class", "Solidity", "React"]
-}
-,
+    image: dokumentasiweb3,
+    author: "Nadhim Alim",
+    tags: [
+      "Blockchain",
+      "Web3",
+      "Jogja Coding House",
+      "Mini Class",
+      "Solidity",
+      "React",
+    ],
+  },
+  {
+    title: "Jejak Pendidikan Nadhim Alim",
+    date: "8 Juli 2025",
+    content: `Pendidikan SD – SDIT Baitussalam Prambanan Muhammad Nadhim Alim mengawali pendidikan formalnya di SDIT Baitussalam Prambanan, sebuah sekolah dasar Islam terpadu yang dikenal dengan pendekatan holistik antara akademik dan pembentukan karakter Islami. Di sini, Nadhim tidak hanya belajar membaca, menulis, dan berhitung, tetapi juga dibiasakan dengan nilai-nilai spiritual seperti disiplin, tanggung jawab, dan kepedulian sosial sejak dini. Lingkungan belajar yang kondusif dan pendekatan pendidikan yang menyentuh sisi emosional serta spiritual, menjadi pondasi kuat bagi tumbuhnya semangat belajar dalam diri Nadhim.
+    Setelah lulus dari sekolah dasar, Nadhim melanjutkan ke SMP Negeri 2 Piyungan, sekolah menengah pertama negeri di wilayah Kabupaten Bantul. Di lingkungan sekolah ini, ia mulai membentuk jati diri remaja yang mandiri dan aktif. Ia dikenal sebagai siswa yang tenang namun memiliki rasa ingin tahu yang besar, terutama dalam pelajaran IPA dan Matematika. Nadhim juga aktif mengikuti kegiatan organisasi sekolah dan berbagai lomba akademik yang mengasah kemampuan logika dan analisisnya. Pengalaman sosial dan akademik selama SMP menjadi bekal penting dalam membentuk pola pikir kritis dan rasa percaya diri.
+    Pendidikan SMA – MAN 3 Bantul  Jenjang pendidikan menengah atas ditempuh oleh Nadhim di MAN 3 Bantul, salah satu madrasah unggulan di Yogyakarta. Pada tahun-tahun awal, ia aktif dalam kegiatan keagamaan, organisasi sekolah, serta pengembangan akademik di bidang eksakta. Namun, titik balik penting dalam perjalanan minatnya terjadi saat memasuki kelas 11.
+    Di kelas tersebut, temannya yang bernama Hanif memperkenalkannya pada dunia pemrograman website. Dari percakapan ringan hingga melihat langsung hasil karya Hanif, Nadhim mulai tertarik dan penasaran. Ia kemudian mulai belajar secara otodidak melalui YouTube, salah satu channel favoritnya adalah Dea Afrizal, yang membahas pemrograman dengan cara sederhana dan praktis. Sejak saat itu, minatnya terhadap teknologi digital terus berkembang.
+    Memasuki kelas 12, minat tersebut berubah menjadi keputusan yang serius. Nadhim memutuskan untuk melanjutkan pendidikan ke jurusan Informatika di Universitas Ahmad Dahlan (UAD). Ia percaya bahwa dunia teknologi informasi memiliki potensi besar untuk membangun masa depan yang lebih efisien dan berdampak luas bagi masyarakat.
+    Setelah lulus dari MAN 3 Bantul, Muhammad Nadhim Alim resmi melanjutkan studinya ke jenjang Strata 1 (S1) di Program Studi Informatika, Universitas Ahmad Dahlan (UAD), Yogyakarta, pada angkatan 2023. Pilihan ini bukan tanpa alasan — sejak duduk di bangku SMA, ketertarikannya terhadap dunia pengembangan web dan teknologi informasi terus tumbuh dan menguat.
+    Di UAD, Nadhim mulai mendalami berbagai mata kuliah dasar informatika seperti pemrograman, basis data, dan struktur data. Meski awalnya sempat merasa tantangan dunia kuliah cukup berbeda dibandingkan sekolah, ia cepat beradaptasi. Dukungan dari dosen, komunitas kampus, serta akses ke sumber belajar online membuatnya lebih percaya diri dalam mengembangkan potensi.
+    Ia juga aktif mengikuti kelas tambahan, seminar, dan proyek kecil-kecilan untuk mengasah keterampilan teknis. Di luar kelas, Nadhim kerap mencoba membuat proyek aplikasi sederhana dan belajar langsung dari dokumentasi serta tutorial daring.
+    Bagi Nadhim, kuliah di UAD bukan sekadar menuntut ilmu, tetapi juga menjadi wadah untuk membangun masa depan di dunia teknologi — dengan harapan bisa memberi kontribusi nyata bagi masyarakat dan negara.`,
+    image: pendidikanNadhim, // ganti sesuai gambar profil yang relevan
+    author: "Nadhim Alim",
+    tags: ["Pendidikan", "Nadhim Alim", "Yogyakarta", "UAD", "Inspiratif"],
+  },
 ];
 
 const NewsDetail = () => {

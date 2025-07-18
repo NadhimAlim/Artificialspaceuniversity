@@ -17,10 +17,10 @@ const News = () => {
         "Nadhim Alim mengikuti mini class Web3 & Blockchain di Jogja Coding House...",
     },
     {
-      title: "Pemanfaatan AI dalam Sektor Publik",
+      title: "Dimana Kah Pendidikan Nadhim Alim?",
       date: "5 Juli 2025",
       content:
-        "AI kini digunakan untuk membantu proses birokrasi pemerintahan yang lebih efisien.",
+        "Nadhim Alim adalah mahasiswa Informatika aktif di Universitas Ahmad Dahlan Yogyakarta...",
     },
     {
       title: "Kemkominfo dan DPR Bahas RUU AI",
