@@ -17,6 +17,7 @@ import Dashboard from "./components/Dashboard";
 import CameraCapture from "./components/CameraCapture";
 import News from "./components/pages/News";
 import NewsDetail from "./components/pages/NewsDetail";
+import MessageBoard from "./components/MessageBoard";
 
 // === Notifikasi Pengunjung dengan Lokasi (EmailJS + ipapi) ===
 const VisitorNotifier = () => {
@@ -72,8 +73,7 @@ function App() {
                 <PricingSection />
                 <TestimonialsSection />
                 <SupportedBySection />
-                
-      {/* <SmartContractInterface /> */}
+
                 <FAQSection />
                 <Footer />
               </>
@@ -84,6 +84,9 @@ function App() {
 
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+
+          <Route path="/message-board" element={<MessageBoard />} />
+
         </Routes>
       </div>
     </Router>

@@ -19,6 +19,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
             <NavItem to="/news" label="News" />
+            <NavItem to="/message-board" label="Kirim Pesan Blockchain" /> {/* ✅ Tambahan */}
             <NavItem to="/login" label="Login" />
             <Link
               to="/register"
@@ -63,6 +64,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-2 pb-4 space-y-2">
             <NavItem to="/news" label="News" mobile />
+            <NavItem to="/message-board" label="Kirim Pesan Blockchain" mobile /> {/* ✅ Tambahan */}
             <NavItem to="/login" label="Login" mobile />
             <Link
               to="/register"
@@ -90,5 +92,6 @@ const NavItem = ({ to, label, mobile }) => (
 );
 
 export default Navbar;
+
 
 
