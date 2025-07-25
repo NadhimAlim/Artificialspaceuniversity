@@ -7,7 +7,44 @@ import certifImg from "../assets/sertifikatlaravel.jpeg";
 import certifImg2 from "../assets/sertifikatwesclic.jpeg";
 import certifImg3 from "../assets/sertifikatblockchain1.jpeg";
 import certifImg4 from "../assets/dokumentasiweb3.jpg";
+import Vuedirectiv from "../assets/dirextivbynadhim.png";
+import Vuedirectiv2 from "../assets/dirextivbynadhim2.png";
 
+// Komponen Slider Gambar
+const ImageSlider = ({ images }) => {
+  const [index, setIndex] = useState(0);
+
+  const next = () => setIndex((index + 1) % images.length);
+  const prev = () => setIndex((index - 1 + images.length) % images.length);
+
+  return (
+    <div className="relative mb-3">
+      <img
+        src={images[index]}
+        alt={`Slide ${index}`}
+        className="w-full h-40 object-cover rounded-md"
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 px-2 py-1 text-sm rounded-full"
+          >
+            ◀
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 px-2 py-1 text-sm rounded-full"
+          >
+            ▶
+          </button>
+        </>
+      )}
+    </div>
+  );
+};
+
+// Data proyek
 const projects = {
   Frontend: [
     {
@@ -38,9 +75,15 @@ const projects = {
       image: portfolioImg,
       link: "https://codecrimping.vercel.app",
     },
+    {
+      title: "Membuat Card Vue.js dengan Directiv dan cara menambahkan",
+      description: "Project backend dengan Vue.js.",
+      tech: ["VUE JS", "Directiv Vue"],
+      images: [Vuedirectiv, Vuedirectiv2],
+      link: "https://github.com/NadhimAlim/vuedirectiv/tree/main/nadhimvuelatihan",
+    },
   ],
-  Backend: [
-  ],
+  Backend: [],
   "UI/UX": [
     {
       title: "Redesign Dashboard Sekolah",
@@ -58,10 +101,11 @@ const projects = {
   Mobile: [],
   AI: [
     {
-      title: "Sistem Otomatisasi Klasifikasi Prestasi Akademik Siswa Berbasis AI dan Algoritma Random Forest",
-    description: "Tugas Akhir Semester KCB",
-    tech: ["Python", "Random Forest", "Sklearn", "Pandas"],
-    link: "#",
+      title:
+        "Sistem Otomatisasi Klasifikasi Prestasi Akademik Siswa Berbasis AI dan Algoritma Random Forest",
+      description: "Tugas Akhir Semester KCB",
+      tech: ["Python", "Random Forest", "Sklearn", "Pandas"],
+      link: "#",
     },
   ],
   Sertifikat: [
@@ -99,7 +143,6 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        {/* Heading */}
         <header className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-800">💼 Portofolio Nadhim</h2>
           <p className="text-gray-500 mt-2">
@@ -107,7 +150,6 @@ const PortfolioSection = () => {
           </p>
         </header>
 
-        {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-4 mb-10">
           {Object.keys(projects).map((cat) => (
             <button
@@ -124,7 +166,6 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* Card List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {list.length ? (
             list.map((p, i) => (
@@ -132,13 +173,16 @@ const PortfolioSection = () => {
                 key={i}
                 className="bg-gray-50 border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition"
               >
-                {p.image && (
+                {/* Gambar Utama atau Slider */}
+                {p.images ? (
+                  <ImageSlider images={p.images} />
+                ) : p.image ? (
                   <img
                     src={p.image}
                     alt={p.title}
                     className="w-full h-40 object-cover rounded-md mb-3"
                   />
-                )}
+                ) : null}
 
                 <h3 className="text-lg font-bold text-blue-700 mb-1">{p.title}</h3>
                 <p className="text-gray-700 mb-3 text-sm">{p.description}</p>
