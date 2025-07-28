@@ -34,7 +34,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="/files/NadhimAlim-CV.pdf"
+              href="/img/CVMUHAMMADNADHIMALIM.pdf"
               className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-md font-semibold flex items-center shadow hover:shadow-lg transition"
               download
             >
