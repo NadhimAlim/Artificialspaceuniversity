@@ -107,6 +107,12 @@ const projects = {
       tech: ["Figma", "Hero Section", "UI Trend 2025"],
       link: "https://www.figma.com/design/LVdZLFCIiNABs3zqFnCtSF/Video-Live-Streaming-Service--Community-?node-id=216-23&p=f&t=lRBWpprohukIcdPs-0",
     },
+    {
+      title: "Desain Aplikasi Mobile Konser Musik",
+      description: "Konsep hero & layout modern untuk travel-startup.",
+      tech: ["Figma", "Hero Section", "UI Trend 2025"],
+      link: "https://www.figma.com/design/oVYAui8lffJ0yeSBApbmgS/Untitled?node-id=0-1&p=f&t=gQb6kh50jB1Sop9Z-0",
+    },
   ],
   Mobile: [],
   AI: [
