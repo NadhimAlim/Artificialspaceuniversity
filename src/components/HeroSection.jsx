@@ -48,15 +48,6 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-
-        {/* Profile image */}
-        {/* <div className="lg:w-1/2 order-1 lg:order-2 relative">
-          <img
-            src={nadhimImg}
-            alt="Nadhim Alim"
-            className="w-full max-w-2xl h-64 md:h-80 rounded-xl object-cover mx-auto shadow-xl ring-4 ring-yellow-400 transform hover:scale-105 transition"
-          />
-        </div> */}
         {/* Profile video */}
         <div className="lg:w-1/2 order-1 lg:order-2 relative">
           <video
