@@ -86,16 +86,16 @@ const projects = {
   Backend: [],
   "UI/UX": [
     {
-      title: "Redesign Dashboard Sekolah",
+      title: "Redesign Aplikasi Sekolah Digital",
       description: "Studi UX dan UI kit berbasis Figma.",
       tech: ["Figma", "Prototype", "User Flow"],
-      link: "#",
+      link: "https://www.figma.com/design/Tqf27zxaEISAJctdanlxSn/Untitled?node-id=0-1&p=f&t=SyPio4QnwoZvQkE8-0",
     },
     {
-      title: "Landing Page Travel-App",
+      title: "Landing Page Video live Streaming",
       description: "Konsep hero & layout modern untuk travel-startup.",
       tech: ["Figma", "Hero Section", "UI Trend 2025"],
-      link: "#",
+      link: "https://www.figma.com/design/LVdZLFCIiNABs3zqFnCtSF/Video-Live-Streaming-Service--Community-?node-id=216-23&p=f&t=lRBWpprohukIcdPs-0",
     },
   ],
   Mobile: [],
