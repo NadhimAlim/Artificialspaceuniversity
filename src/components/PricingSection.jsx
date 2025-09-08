@@ -84,6 +84,16 @@ const projects = {
     },
   ],
   Backend: [],
+  Desain: [
+    {
+      title: "Menjadi Desain Grafis Di Organisasi HIPMI PT UAD",
+      description: "HIPMI PT UAD Periode 2024-2025",
+      tech: ["Figma", "Prototype", "User Flow"],
+      link: "https://www.instagram.com/hipmiptuad/",
+    },
+    
+    
+  ],
   "UI/UX": [
     {
       title: "Redesign Aplikasi Sekolah Digital",
